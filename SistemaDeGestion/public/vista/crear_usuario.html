@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Crear Usuario</title>
+        <script type="text/javascript" src="validaciones_usuario.js"></script>
+    </head>
+    
+
+<body>
+    <form id="formulario01" method="POST" action="../controladores/crear_usuario.php" class="cuadro"
+        onsubmit="return validarCamposObligatorios()">
+        <label for="cedula">Cédula (*)</label>
+        <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el numero de cédula"
+             onkeypress="return validarNumeros(event)" maxlength="10">
+        <span id="mensajeCedula"></span>
+        <br>
+
+        <label for="nombres">Nombres (*)</label>
+        <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese los dos nombre"
+            onkeypress=" return validarLetras(event)" onkeyup="validarNombre()">
+        <span id="mensajeNombres"></span>
+        <br>
+
+        <label for="apellidos">Apellidos (*)</label>
+        <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese los dos apellidos"
+            onkeypress=" return validarLetras(event)" onkeyup="validarApellido()">
+        <span id="mensajeApellidos"></span>
+        <br>
+
+        <label for="direccion">Dirección (*)</label>
+        <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección"
+            onkeypress=" return validarLetrasNumeros(event)" onkeyup="validarDireccion()">
+        <span id="mensajeDireccion"></span>
+        <br>
+
+        <label for="telefono">Teléfono (*)</label>
+        <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número teléfonico"
+            onkeypress="return validarNumeros(event)" onkeyup="validarTelefono()" maxlength="10">
+        <span id="mensajeTelefono"></span>
+        <br>
+
+        <label for="fecha">Fecha Nacimiento (*)</label>
+        <input type="text" name="fechaNacimiento" id="fechaNacimiento" value=""
+            placeholder="Ingrese una fecha con formato dd/mm/yyyy" onkeypress="return validarFechaNumeros(event)"
+            onkeyup="validarFecha()" maxlength="10">
+        <span id="mensajeFechaNacimiento"></span>
+        <br>
+
+        <label for="correo">Correo Electrónico (*)</label>
+        <input type="text" name="correo" id="correo" value="" placeholder="Ingrese su correo electrónico"
+            onkeypress="return validarLetrasCorreo(event)" onkeyup="validarCorreo()">
+        <span id="mensajecorreo"></span>
+        <br>
+
+        <label for="contrasena">Contraseña (*)</label>
+        <input type="password" name="contrasena" id="contrasena" value="" placeholder="Ingrese su contraseña"
+            onkeypress="return validarLetrasContrasena(event)" ">
+        <span id="mensajecontrasena"></span>
+        <br>
+
+        <label for="roles">Rol (*)</label>
+        <input type="text" id="roles" name="roles" value="" placeholder="Ingrese el rol ..." onkeypress=" return validarLetras(event)" onkeyup="validarRol()" maxlength="5" />
+        <span id="mensajeRol"></span>
+        <br>
+
+        <input class="botonstyle" type="submit" value="crear" name="crear" value="Aceptar">
+        <input class="botonstyle" type="reset" value="cancelar" name="cancelar" value="Cancelar">
+
+    </form>
+
+</body>
+
+</html>
